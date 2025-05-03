@@ -12,14 +12,10 @@ Sentiment Analysis: Uses NLTK's VADER to analyze user responses and display sent
 Chat Termination: Disables the chat input after answers are submitted or on exit commands (e.g., "bye", "exit", "quit").
 UI Styling: Custom CSS for chat messages, sidebar progress tracking, and a clean layout.
 
-Project Structure
-talentscout-chatbot/
-├── app.py              # Main Streamlit application
-├── requirements.txt    # Python dependencies
-├── .gitignore          # Excludes .env, candidates.db, etc.
-├── README.md           # Project documentation
+# Project Structure
+ app.py (Main Streamlit application), requirements.txt(Python dependencies, .gitignore(Excludes .env, candidates.db, etc.), README.md(Project documentation)
 
-Setup
+# Setup
 
 Clone the Repository:
 git clone https://github.com/your-username/talentscout-chatbot.git
