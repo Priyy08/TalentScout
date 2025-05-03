@@ -1,0 +1,19 @@
+Python
+
+pycache/ *.pyc *.pyo *.pyd .Python env/ venv/ ENV/ env.bak/ venv.bak/
+
+Database
+
+candidates.db
+
+Environment variables
+
+.env
+
+IDE files
+
+.vscode/ .idea/
+
+System files
+
+.DS_Store Thumbs.d
