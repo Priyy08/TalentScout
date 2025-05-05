@@ -1,5 +1,5 @@
 # TalentScout
-TalentScout Chatbot is a Streamlit-based web application that conducts initial screenings for tech candidates. It collects candidate information, validates inputs, generates technical questions based on the provided tech stack, collects answers in a single response, and stores data in an SQLite database. The app uses Groq's Llama3 model for question generation and NLTK for sentiment analysis, featuring a user-friendly interface with a chat system that terminates after answers are submitted.
+TalentScout Chatbot is a Streamlit-based web application that conducts initial screenings for tech candidates. It collects candidate information, validates inputs, generates technical questions based on the provided tech stack, collects answers in a single response, and stores data in an Google Cloud Firebase DB. The app uses Groq's Llama3 model for question generation and NLTK for sentiment analysis, featuring a user-friendly interface with a chat system that terminates after answers are submitted.
 
 # Features
 
@@ -13,7 +13,7 @@ Chat Termination: Disables the chat input after answers are submitted or on exit
 UI Styling: Custom CSS for chat messages, sidebar progress tracking, and a clean layout.
 
 # Project Structure
- app.py (Main Streamlit application), requirements.txt(Python dependencies), .gitignore(Excludes .env, candidates.db, etc.), README.md(Project documentation)
+ app.py (Main Streamlit application), requirements.txt(Python dependencies), .gitignore(Excludes .env etc.), README.md(Project documentation)
 
 # Setup
 
@@ -33,7 +33,10 @@ pip install -r requirements.txt
 
 Set Up Environment Variables:Create a .env file in the project root with your Groq API key:
 GROQ_API_KEY=your_groq_api_key_here
+FIREBASE_SERVICE_ACCOUNT={FIREBASE JSON DATA}
 
+Note: To set the key "FIREBASE_SERVICE_ACCOUNT" you have to first create an project in google's firebase then setup an db and download the credentials which contains all of the neccesary json data to connect to 
+the cloud db from cloud/local deployed streamlit app for more detail you can refer to google firebase setup documentation
 
 Run the App:
 streamlit run app.py
@@ -77,10 +80,10 @@ streamlit==1.39.0: Powers the web interface.
 groq==0.11.0: Interfaces with Llama3 for question generation.
 python-dotenv==1.0.1: Loads the Groq API key from .env.
 nltk==3.9.1: Performs sentiment analysis on user responses.
-sqlite3: Built-in Python library for database storage.
+firebase-admin==6.8.0  Sets the Coonection of App to google firebase DB
 
 # Notes
 
-The SQLite database (candidates.db) is created locally and excluded from the repository via .gitignore.
+The google firebase DB is created and connected to store candidates personal and proffessional details along with their answers to be further evaluated bt recruiters.
 Email and phone numbers are hashed using SHA-256 for privacy.
 The app expects numbered answers to match question numbers for accurate parsing.
